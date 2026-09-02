@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contactate conmigo — Martín Ferrero</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio / Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <header>
+        <h1>Contactate conmigo</h1>
+        <p>Si estás atravesando una situación laboral y necesitás asesoramiento, completá el siguiente formulario con tus datos y una breve descripción de tu consulta.</p>
+        <p>La información proporcionada será utilizada únicamente para poder analizar el motivo de contacto y comunicarme con vos para coordinar una consulta.</p>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <p>
+                <label for="nombre">Nombre y apellido (*):</label><br>
+                <input type="text" id="nombre" name="nombre" required>
+            </p>
+
+            <p>
+                <label for="email">Correo electrónico (*):</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+
+            <p>
+                <label for="telefono">Teléfono (*):</label><br>
+                <input type="tel" id="telefono" name="telefono" required>
+            </p>
+
+            <p>
+                <label for="motivo">Motivo de la consulta (*):</label><br>
+                <select id="motivo" name="motivo" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="despido">Despido</option>
+                    <option value="indemnizacion">Indemnización</option>
+                    <option value="diferencias_salariales">Diferencias salariales</option>
+                    <option value="acoso_conflicto">Acoso o conflicto laboral</option>
+                    <option value="trabajo_no_registrado">Trabajo no registrado</option>
+                    <option value="derechos_laborales">Consulta sobre derechos laborales</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="trabajando">¿Actualmente estás trabajando? (*):</label><br>
+                <select id="trabajando" name="trabajando" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="informal">Trabajo de manera informal</option>
+                    <option value="prefiero_no_responder">Prefiero no responder</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="descripcion">Descripción de la situación (*):</label><br>
+                <textarea id="descripcion" name="descripcion" rows="5" cols="40" required placeholder="Explicá brevemente qué ocurrió, desde cuándo sucede y cuál es tu principal preocupación."></textarea>
+            </p>
+
+            <fieldset>
+                <legend>Preferencia de contacto (*):</legend>
+                <input type="radio" id="pref_email" name="preferencia_contacto" value="email" required>
+                <label for="pref_email">Correo electrónico</label><br>
+
+                <input type="radio" id="pref_telefono" name="preferencia_contacto" value="telefono">
+                <label for="pref_telefono">Teléfono</label><br>
+
+                <input type="radio" id="pref_whatsapp" name="preferencia_contacto" value="whatsapp">
+                <label for="pref_whatsapp">WhatsApp</label>
+            </fieldset>
+
+            <br>
+
+            <input type="submit" value="Enviar consulta">
+        </form>
+    </main>
+
+</body>
+</html>
