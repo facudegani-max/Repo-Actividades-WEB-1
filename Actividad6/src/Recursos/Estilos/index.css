@@ -1,36 +1,171 @@
-/*REGLA*/
+/* =========================
+   ESTILOS GENERALES
+   ========================= */
 
-/*
-SINTAXIS CSS
-
-
-Selector{
-    propiedad: valor;
-    propiedad: valor;
-}
-*/
-
-/*
-Selector de tipo 
-*/
-
-body{
-    background-color: chocolate;
+body {
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: #333;
 }
 
 
-header{
-    background-color: rgb(51, 22, 218);
+/* =========================
+   BARRA DE NAVEGACIÓN
+   ========================= */
+
+nav {
+    background-color: #222;
+    padding: 15px;
 }
 
-a{
-    color:blueviolet;
-    text-decoration: fuchsia;
-    margin: 3px;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-.vinculos{
-    color:aquamarine
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+
+/* =========================
+   CONTENIDO
+   ========================= */
+
+main {
+    width: 80%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #444;
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ENLACES
+   ========================= */
+
+a {
+    color: #2980b9;
+}
+
+a:hover {
+    color: #1c5980;
+}
+
+
+/* =========================
+   FORMULARIO
+   ========================= */
+
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =========================
+   BOTÓN
+   ========================= */
+
+input[type="submit"] {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #1f2d3a;
+}
+
+
+/* =========================
+   RADIO BUTTONS
+   ========================= */
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+fieldset input {
+    width: auto;
+}
+
+legend {
+    font-weight: bold;
 }
 
 
