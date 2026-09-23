@@ -1,0 +1,4 @@
+En el estilo CSS para esta actividad buscaria:
+- Usar una paleta de colores simple
+- Aliniar y separar los contenidos importantes
+- Que el form este con un color diferente para diferenciarlo del resto 

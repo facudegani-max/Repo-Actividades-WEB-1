@@ -1,0 +1,75 @@
+*{
+    box-sizing:content-box;
+}
+
+body{
+    background-color: rgb(218, 197, 171);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(17, 16, 16);
+    padding: 5px 10px 20px 10px;
+    margin: 10px;
+}
+
+.encabezado_principal {
+    text-align: center;
+    margin: 10px;
+}
+
+.encabezado_principal a {
+    color: rgb(8, 109, 172);
+    font-weight: bold;
+}
+
+.contenido_principal{
+    text-align: justify;
+    margin: 10px;
+}
+
+.contenido_principal section {
+    margin-bottom: 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+ol{
+    padding: 5px 20px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 5px 20px;
+    margin: 10px;
+}
+
+.pie_pagina{
+    text-align: center;
+    font-size: 12px;
+    color: rgb(17, 16, 16);
+}
+
+.pie_pagina p {
+    margin: 0;
+}
+
+u{
+    color: rgb(23, 101, 36);
+}
+
+button{
+    background-color: rgb(8, 109, 172);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+form{
+    background-color: rgb(236, 196, 147);
+    padding: 20px;
+    margin: 0 auto;
+}

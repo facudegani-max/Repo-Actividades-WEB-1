@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Profesional - Contacto</title>
+       <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="encabezado_principal">
+        <h1>Formulario de Contacto</h1>
+        <a href="./index.html">Volver a inicio</a>
+        <hr>
+    </header>
+
+    <main class="contenido_principal">
+        <section>
+            <p>Estoy disponible para conversar sobre tus necesidades. Por favor, completa el formulario a continuación con la mayor cantidad de detalles posible. Me comprometo a responder dentro de 24 a 48 horas hábiles.</p>
+            <p>Puedes contactarme también directamente a: <u>martin.rrhh@email.com</u> | Teléfono: <u>+54 11 2345-6789</u></p>
+        </section>
+        <hr>
+
+        <form method="POST" action="procesar-contacto.php">
+            <div class="datos_personales">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre"  placeholder="Ej: Bautista Pereiro" name="nombre" required>
+            </div>
+            <br>
+
+            <div class="datos_personales">
+                <label for="email">Email de Contacto:</label>
+                <input type="email" id="email" name="email" placeholder="Ej: tu@gmail.com" required>
+            </div>
+            <br>
+
+            <div class="datos_personales">
+                <label for="telefono">Teléfono de Contacto:</label>
+                <input type="tel" id="telefono" placeholder="3123123123"  name="telefono">
+            </div>
+            <br>
+
+            <div class="datos_empresa">
+                <label for="empresa">Nombre de la Empresa:</label>
+                <input type="text" id="empresa" placeholder="Ej: Grido"  name="empresa" required>
+            </div>
+            <br>
+
+            <div class="datos_empresa">
+                <label for="rubro">Rubro / Sector de tu Empresa:</label>
+                <select id="rubro" name="rubro" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="manufactura">Manufactura</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="servicios-financieros">Servicios Financieros</option>
+                    <option value="comercio-minorista">Comercio Minorista</option>
+                    <option value="educacion">Educación</option>
+                    <option value="salud">Salud</option>
+                    <option value="construccion">Construcción</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="datos_empresa">
+                <label for="empleados">Cantidad de Empleados:</label>
+                <select id="empleados" name="empleados" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="5-20">5-20</option>
+                    <option value="21-50">21-50</option>
+                    <option value="51-100">51-100</option>
+                    <option value="101-200">101-200</option>
+                    <option value="201-mas">201 o más</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="desafio_principal">
+                <label for="desafio">Desafío o Necesidad Principal (descripción):</label>
+                <textarea id="desafio" name="desafio" rows="5" required placeholder="Describe brevemente el principal desafío de RRHH que enfrenta tu empresa..."></textarea>
+            </div>
+            <br>
+
+            <div class="desafio_principal">
+                <label for="consultor-anterior">¿Has trabajado antes con un consultor externo?</label>
+                <select id="consultor-anterior" name="consultor-anterior">
+                    <option value="">Selecciona una opción</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="talvez">Tal vez</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="desafio_principal">
+                <label for="presupuesto">Presupuesto Aproximado Disponible:</label>
+                <select id="presupuesto" name="presupuesto">
+                    <option value="">Selecciona una opción</option>
+                    <option value="menos-500">Menos de $500</option>
+                    <option value="500-1500">$500-$1500</option>
+                    <option value="1500-3000">$1500-$3000</option>
+                    <option value="3000-5000">$3000-$5000</option>
+                    <option value="mas-5000">Más de $5000</option>
+                    <option value="sin-definir">Sin definir aún</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="desafio_principal">
+                <label for="disponibilidad">¿Cuál es tu disponibilidad para una primera reunión?</label>
+                <select id="disponibilidad" name="disponibilidad">
+                    <option value="">Selecciona una opción</option>
+                    <option value="proxima-semana">Próxima semana</option>
+                    <option value="dos-semanas">En 2 semanas</option>
+                    <option value="mes">En el mes</option>
+                    <option value="flexible">Flexible</option>
+                    <option value="confirmar">Necesito confirmarlo</option>
+                </select>
+            </div>
+            <br>
+
+            <button type="submit">Enviar mi Consulta</button>
+            <button type="reset">Limpiar Formulario</button>
+        </form>
+        <hr>
+
+        <section>
+            <p>Tus datos serán utilizados únicamente para contactarte y discutir tus necesidades. No compartiremos tu información con terceros. Gracias por confiar en nosotros.</p>
+        </section>
+    </main>
+
+    <footer class="pie_pagina">
+         <p>&copy; 2026 Martín Rodríguez García. Todos los derechos reservados.</p>
+
+    </footer>
+</body>
+</html>
