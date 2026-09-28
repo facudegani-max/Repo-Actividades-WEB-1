@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retiro Sustentable - Reservas</title>
+    <link rel="stylesheet" href="./recursos/css/index.css">
+</head>
+<body>
+
+    <!--codigo idéntico al index.html-->
+    <header class="header-principal">
+        <a href="index.html" class="logo-link">
+            <img src="./recursos/imagenes/logo-rs.svg" alt="Logo Retiro Sustentable" class="logo-img">
+        </a>
+        <nav class="nav-principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-contenido">
+        <section class="seccion-reservas">
+            <h1>Reservas</h1>
+            <h2>Contáctanos</h2>
+            <p>Completa el siguiente formulario para consultar disponibilidad y realizar tu reserva.</p>
+
+            <!--Formulario-->
+            <form action="#" method="post" class="formulario-reserva">
+            
+                <div class="campo-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                </div>
+
+                <div class="campo-form">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="Ej. +54 351 1234567">
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                </div>
+
+                <div class="campo-form">
+                    <label for="fecha-desde">Fecha desde:</label>
+                    <input type="date" id="fecha-desde" name="fecha_desde" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="fecha-hasta">Fecha hasta:</label>
+                    <input type="date" id="fecha-hasta" name="fecha_hasta" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="comentario">Comentario:</label>
+                    <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe aquí tu consulta o requerimiento especial..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Consulta</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <p>&copy; 2026 Retiro Sustentable. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

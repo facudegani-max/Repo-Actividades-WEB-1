@@ -1,0 +1,137 @@
+
+/*Carga de la tipografía*/
+@font-face {
+    font-family: 'MiTipografia';
+    src: url('../recursos/tipografias/mi-tipografia.woff2') format('woff2');
+    font-display: swap;
+}
+
+/*Configuración del modelo, modelo de caja alternativo*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'MiTipografia', sans-serif;
+    font-size: 16px; /*Tamaño de fuente general*/
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    background-color: #f9f9f9;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+
+
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #2e5a44; /* Color idéntico al footer */
+    color: #ffffff;
+}
+
+/* Contenido Principal */
+.main-contenido {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/*Footer*/
+.footer-principal {
+    background-color: #2e5a44; /*Mismo color de fondo que el encabezado*/
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+
+.nav-principal ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-principal a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.catalogo-cabanas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tarjeta-cabana {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1 1 calc(50% - 2rem);
+}
+
+.tarjeta-cabana img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.formulario-reserva {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo-form input,
+.campo-form textarea {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-enviar, .btn-reserva {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #2e5a44;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.logo-img {
+    width: 150px;       
+    height: auto;       
+    display: block;     
+}
+.logo-img {
+    height: 60px;       
+    width: auto;       
+}

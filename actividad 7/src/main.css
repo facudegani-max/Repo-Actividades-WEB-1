@@ -1,75 +1,118 @@
-*{
-    box-sizing:content-box;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }
 
-body{
+body {
     background-color: rgb(218, 197, 171);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(17, 16, 16);
-    padding: 5px 10px 20px 10px;
-    margin: 10px;
+    padding: 10px;
+    line-height: 1.6;
 }
 
+
 .encabezado_principal {
-    text-align: center;
-    margin: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(218, 197, 171); 
+    padding: 15px 20px;
+    border-bottom: 2px solid #ccc;
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .encabezado_principal a {
     color: rgb(8, 109, 172);
     font-weight: bold;
-}
-
-.contenido_principal{
-    text-align: justify;
-    margin: 10px;
-}
-
-.contenido_principal section {
-    margin-bottom: 15px;
-}
-
-a{
     text-decoration: none;
 }
 
-ol{
+
+.contenido_principal {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+.contenido_principal section, 
+.contenido_principal form, 
+.contenido_principal div {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+ol {
     padding: 5px 20px;
 }
 
-ul{
+ul {
     list-style-type: none;
     padding: 5px 20px;
-    margin: 10px;
+    margin: 10px 0;
 }
 
-.pie_pagina{
-    text-align: center;
-    font-size: 12px;
-    color: rgb(17, 16, 16);
-}
-
-.pie_pagina p {
-    margin: 0;
-}
-
-u{
+u {
     color: rgb(23, 101, 36);
 }
 
-button{
+
+form {
+    background-color: rgb(236, 196, 147);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+button {
     background-color: rgb(8, 109, 172);
     color: white;
     border: none;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
     font-size: 16px;
-    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
 }
 
-form{
-    background-color: rgb(236, 196, 147);
-    padding: 20px;
-    margin: 0 auto;
+button[type="reset"] {
+    background-color: #6c757d;
+}
+
+
+.pie_pagina {
+    text-align: center;
+    font-size: 12px;
+    color: rgb(17, 16, 16);
+    padding: 20px 0;
+}
+
+
+.btn-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; 
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    z-index: 1001;
+}
+
+.btn-flotante:hover {
+    background-color: #128c7e;
 }
