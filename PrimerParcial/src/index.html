@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Demostración de formularios accesibles y posicionamiento CSS.">
+
+  <title>Parcial 1 - Formularios Accesibles y Posicionamiento CSS</title>
+
+  <link rel="stylesheet" href="./Recursos/Estilos/index.css">
+
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN (position: sticky). Tiene id="inicio" para el botón flotante -->
+  <header class="barra-navegacion" id="inicio">
+
+    <div class="logo">Estudio Copan</div>
+    <nav aria-label="Navegación principal">
+      <ul class="menu-navegacion"> <!--Envia hacia formulario correspondiente-->
+        <li><a href="#formulario-contacto">Contacto</a></li> 
+        <li><a href="#demo-posicionamiento">Posicionamiento</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="contenido-principal">
+
+    <h1 class="titulo-principal">Parcial 1: Formularios accesibles y posicionamiento CSS</h1>
+
+    <!--FORMULARIO DE CONTACTO ACCESIBLE-->
+    <section id="formulario-contacto" class="tarjeta-seccion" aria-labelledby="titulo-formulario">
+      <header>
+        <h2 id="titulo-formulario">Formulario de contacto accesible</h2>
+        <p>Vinculación explícita (label/input), validación nativa (required) y atributos (ARIA).</p>
+      </header>
+
+      <!-- Sin "novalidate": el navegador valida los campos required al enviar -->
+      <form action="https://httpbin.org/post" method="POST" class="formulario-accesible"> <!--Envia los datos a un servdor de pruba para comprobar que se envian los datos correctamente-->
+
+        <div class="grupo-campo">
+          <label for="campo-nombre" class="etiqueta-campo">
+            Nombre completo <span class="requerido" aria-hidden="true">*</span>
+          </label>
+          <!--Control de campo obligatorio -->
+          <input
+            type="text"
+            id="campo-nombre"
+            name="nombre_usuario"
+            class="control-entrada" 
+            required  
+            aria-required="true" 
+            autocomplete="name"
+            aria-describedby="ayuda-nombre error-nombre"
+            placeholder="Ej: María González"
+          >
+          <span id="ayuda-nombre" class="texto-ayuda">Ingrese su nombre y apellido completos.</span>
+          <!-- role="alert" se muestra solo si el campo es inválido -->
+          <span id="error-nombre" class="mensaje-error" role="alert" aria-live="assertive">
+            El nombre es obligatorio.
+          </span>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="campo-email" class="etiqueta-campo">
+            Correo electrónico <span class="requerido" aria-hidden="true">*</span>
+          </label>
+          <input
+            type="email"
+            id="campo-email"
+            name="email_usuario"
+            class="control-entrada"
+            required
+            aria-required="true"
+            autocomplete="email"
+            aria-describedby="ayuda-email error-email"
+            placeholder="usuario@gmail.com"
+          >
+          <span id="ayuda-email" class="texto-ayuda">Utilice un correo Activo.</span>
+          <span id="error-email" class="mensaje-error" role="alert" aria-live="assertive">
+            Ingrese un correo válido, por ejemplo usuario@gmail.com.
+          </span>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="campo-mensaje" class="etiqueta-campo">
+            Mensaje o consulta <span class="requerido" aria-hidden="true">*</span>
+          </label>
+          <textarea
+            id="campo-mensaje"
+            name="mensaje_usuario"
+            class="control-entrada area-texto"
+            rows="4"
+            required
+            aria-required="true"
+            aria-describedby="ayuda-mensaje error-mensaje"
+            placeholder="Escriba aquí su consulta detallada..."
+          ></textarea>
+          <span id="ayuda-mensaje" class="texto-ayuda">Describa su consulta con el mayor detalle posible.</span>
+          <span id="error-mensaje" class="mensaje-error" role="alert" aria-live="assertive">
+            El mensaje es obligatorio.
+          </span>
+        </div>
+
+        <div class="grupo-campo">
+          <button type="submit" class="boton-envio">Enviar consulta</button>
+        </div>
+
+      </form>
+    </section>
+
+    <!-- POSICIONAMIENTO Y APILAMIENTO  -->
+    <section id="demo-posicionamiento" class="tarjeta-seccion" aria-labelledby="titulo-posicionamiento">
+      <header>
+        <h2 id="titulo-posicionamiento">Posicionamiento y apilamiento (z-index)</h2>
+        <p>Cajas con distintos tipos de posicionamiento para alterar el flujo normal del documento.</p>
+      </header>
+
+      <!-- ANTES vs DESPUÉS: la misma caja con comportamiento por defecto y modificado -->
+      <h3>Antes vs. después</h3>
+      <div class="comparacion">
+        <div class="caja caja-antes">
+          <span>Antes: position: static</span>
+          <small>Comportamiento por defecto: ocupa su lugar en el flujo normal.</small>
+        </div>
+        <div class="caja caja-despues">
+          <span>Después: position: relative</span>
+          <small>Se desplaza 15px desde su posición original, pero su espacio original se conserva.</small>
+        </div>
+      </div>
+
+      <!-- Escenario de superposición -->
+      <h3>Superposición y z-index</h3>
+      <div class="escenario-posicionamiento">
+
+        <div class="caja caja-static">
+          <span>position: static</span>
+          <small>(Flujo normal por defecto. top/left/z-index no tienen efecto)</small>
+        </div>
+
+        <div class="caja caja-relative">
+          <span>position: relative; z-index: 1</span>
+          <small>(Desplazada en el flujo. Es el bloque contenedor de las cajas absolute)</small>
+
+          <div class="caja caja-absolute-bajo">
+            <span>absolute; z-index: 5</span>
+            <small>(Queda debajo de la naranja)</small>
+          </div>
+
+          <div class="caja caja-absolute">
+            <span>absolute; z-index: 10</span>
+            <small>(Fuera del flujo. Se dibuja encima)</small>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTÓN FLOTANTE PARA VOLVER ARRIBA (position: fixed) -->
+  <a href="#inicio" class="boton-flotante-fixed" aria-label="Volver arriba">
+    <span aria-hidden="true">↑</span>
+  </a>
+
+
+  <footer class="pie-pagina">
+    <p>&copy; 2026 - Aplicaciones Web 1 | Parcial 1 Práctico | Facundo Degani</p>
+  </footer>
+
+</body>
+</html>

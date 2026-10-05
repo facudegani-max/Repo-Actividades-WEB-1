@@ -1,0 +1,330 @@
+/* ==========================================================
+   RESETEO GLOBAL Y REGLAS BASE
+   ========================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* width/height incluyen padding y border */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* La barra sticky tapa el destino de los enlaces internos; este margen lo compensa */
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #f4f7f6;
+  padding-bottom: 60px;
+}
+
+.contenido-principal {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.titulo-principal {
+  margin-bottom: 25px;
+  color: #1a252f;
+  font-size: 1.8rem;
+}
+
+.tarjeta-seccion {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-seccion h2 {
+  margin-bottom: 10px;
+  color: #1a252f;
+}
+
+.tarjeta-seccion h3 {
+  margin: 25px 0 10px;
+  color: #1a252f;
+  font-size: 1.1rem;
+}
+
+/* ==========================================================
+   POSITION: STICKY - BARRA DE NAVEGACIÓN SUPERIOR
+   ========================================================== */
+.barra-navegacion {
+  position: sticky;      /* se comporta como static hasta alcanzar el umbral "top" y luego queda pegada */
+  top: 0;                /* umbral: se pega al borde superior del viewport al hacer scroll */
+  z-index: 1000;         /* por encima del contenido de la página */
+  background-color: #2c3e50;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-navegacion {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.menu-navegacion a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.menu-navegacion a:hover,
+.menu-navegacion a:focus-visible {
+  color: #48e0c0;
+  outline: 2px solid #48e0c0;
+  outline-offset: 4px;
+}
+
+/* ==========================================================
+   FORMULARIO ACCESIBLE (WCAG / ARIA)
+   ========================================================== */
+.formulario-accesible {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.grupo-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.etiqueta-campo {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.requerido {
+  color: #c0392b;
+}
+
+.control-entrada {
+  padding: 10px 14px;
+  border: 2px solid #7f8c8d;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.control-entrada:focus {
+  /* outline transparente: invisible normalmente, pero visible en modo de alto contraste de Windows */
+  outline: 2px solid transparent;
+  border-color: #2471a3;
+  box-shadow: 0 0 0 3px rgba(36, 113, 163, 0.35);
+}
+
+.area-texto {
+  resize: vertical;
+}
+
+.texto-ayuda {
+  font-size: 0.85rem;
+  color: #566566;
+}
+
+/* Mensajes de error: ocultos por defecto (display: none) */
+.mensaje-error {
+  display: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c0392b;
+}
+
+/* Estado inválido: solo después de que el usuario escribió algo.
+   El role="alert" hace que el lector de pantalla anuncie el error. */
+.control-entrada:invalid:not(:placeholder-shown) {
+  border-color: #c0392b;
+}
+
+.control-entrada:invalid:not(:placeholder-shown) ~ .mensaje-error {
+  display: block;
+}
+
+.boton-envio {
+  background-color: #1b6e3c;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-envio:hover,
+.boton-envio:focus-visible {
+  background-color: #14532d;
+  outline: 2px solid #1b6e3c;
+  outline-offset: 2px;
+}
+
+/* ==========================================================
+   POSICIONAMIENTO: STATIC, RELATIVE, ABSOLUTE, FIXED, Z-INDEX
+   ========================================================== */
+.caja {
+  padding: 15px;
+  border-radius: 6px;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* --- ANTES vs DESPUÉS --- */
+.comparacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 15px;
+  background-color: #eaeded;
+  border-radius: 8px;
+}
+
+.caja-antes {
+  position: static;      /* valor por defecto: flujo normal, top/left se ignoran */
+  background-color: #566566;
+}
+
+.caja-despues {
+  position: relative;    /* sigue en el flujo, pero se desplaza respecto a su posición original */
+  top: 15px;             /* baja 15px; el espacio original queda reservado (no mueve a los vecinos) */
+  left: 15px;            /* se mueve 15px a la derecha */
+  background-color: #2471a3;
+}
+
+/* --- ESCENARIO DE SUPERPOSICIÓN --- */
+.escenario-posicionamiento {
+  background-color: #eaeded;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.caja-static {
+  position: static;      /* flujo normal: z-index aquí no tendría efecto */
+  background-color: #566566;
+  margin-bottom: 15px;
+}
+
+.caja-relative {
+  position: relative;    /* referencia (bloque contenedor) para los hijos absolute */
+  top: 10px;             /* desplazamiento visual sin liberar su espacio en el flujo */
+  left: 10px;
+  min-height: 170px;
+  background-color: #2471a3;
+  z-index: 1;            /* position + z-index crea un contexto de apilamiento propio:
+                            los z-index de sus hijos solo compiten dentro de esta caja */
+}
+
+.caja-absolute,
+.caja-absolute-bajo {
+  position: absolute;    /* sale del flujo normal; se ubica respecto al ancestro posicionado más cercano (.caja-relative) */
+  width: 220px;
+}
+
+.caja-absolute {
+  top: 70px;
+  right: 15px;
+  background-color: #b45309;
+  z-index: 10;           /* capa superior: se dibuja encima de la caja de z-index 5 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.caja-absolute-bajo {
+  top: 15px;
+  right: 80px;
+  background-color: #6c3483;
+  z-index: 5;            /* capa inferior: queda tapada parcialmente por la naranja */
+}
+
+/* --- POSITION: FIXED - BOTÓN FLOTANTE --- */
+.boton-flotante-fixed {
+  position: fixed;       /* sale del flujo y se posiciona respecto al viewport: no se mueve al hacer scroll */
+  bottom: 25px;
+  right: 25px;
+  z-index: 2000;         /* por encima de todo, incluso de la barra sticky (1000) */
+  width: 50px;
+  height: 50px;
+  background-color: #8e44ad;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.boton-flotante-fixed:hover,
+.boton-flotante-fixed:focus-visible {
+  background-color: #6c3483;
+  transform: scale(1.1);
+  outline: 2px solid #8e44ad;
+  outline-offset: 3px;
+}
+
+/* ==========================================================
+   PIE DE PÁGINA
+   ========================================================== */
+.pie-pagina {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #566566;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 600px) {
+  .barra-navegacion {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 15px;
+  }
+
+  html {
+    scroll-padding-top: 110px;
+  }
+
+  .comparacion {
+    grid-template-columns: 1fr;
+  }
+
+  /* En pantallas angostas las cajas absolute pisarían el texto,
+     así que vuelven al flujo normal (position: relative sin desplazamiento) */
+  .caja-absolute,
+  .caja-absolute-bajo {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    margin-top: 10px;
+  }
+}
